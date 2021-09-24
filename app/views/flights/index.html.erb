@@ -4,9 +4,6 @@
   <p>Passengers: </p>
   <% flight.passengers.each do |passenger| %>
     <%= passenger.name %>
-    <%# <%= link_to "Remove #{passenger.name}", flight_passenger_path(passenger.flight_passengers.related(flight)), method: :delete %><br> %>
-    <%# <%= link_to "Remove #{passenger.name}", flight_passenger_path(passenger.flight_passengers.relationships(flight.id, passenger.id)), method: :delete %><br> %>
-    <%# <%= link_to "Remove #{passenger.name}", flight_passenger_path(PlotPassenger.relationships(flight.id, passenger.id)), method: :delete %><br> %>
-
+    <%= link_to "Remove #{passenger.name}", flight_passenger_path(passenger.flight_passengers.related(flight)), method: :delete %><br> %>
   <% end %>
 <% end %>

@@ -28,4 +28,14 @@ RSpec.describe 'Flight Index Page' do
       expect(page).to have_content(@flight2.airline.name)
     end
   end
+  describe 'remove passengers' do
+    it 'can remove a passenger from a flight' do
+      expect(page).to have_link('Remove')
+
+      click_on "Remove Best Passenger"
+
+      expect(page).to have_no_content(@passenger1.name)
+      expect(current_path).to eq(flights_path)
+    end
+  end
 end
