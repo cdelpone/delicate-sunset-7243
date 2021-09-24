@@ -6,7 +6,7 @@ RSpec.describe FlightPassenger, type: :model do
     @flight1 = @airline1.flights.create!(number: 1, date: "08/03/20", departure_city: "Denver", arrival_city: "Reno")
     @flight2 = @airline1.flights.create!(number: 2, date: "09/03/20", departure_city: "Atlanta", arrival_city: "Phoenix")
     @passenger1 = Passenger.create!(name: "Best Passenger", age: 25)
-    @passenger2 = Passenger.create!(name: "Second Passenger", age: 10)
+    @passenger2 = Passenger.create!(name: "Annoying Passenger", age: 10)
     @passenger3 = Passenger.create!(name: "Rude Passenger", age: 30)
     @fl1 = FlightPassenger.create!(flight_id: @flight1.id, passenger_id: @passenger1.id)
     @fl2 = FlightPassenger.create!(flight_id: @flight1.id, passenger_id: @passenger2.id)
